@@ -1,31 +1,38 @@
 import java.util.Scanner;
 
 public class Methods {
-    public static Hotel choseHotel (Hotel [] hotels){
-        Hotel thisHotel = null;
+    public static Hotel choseHotel(Hotel[] hotels) {
         System.out.println("Выберете отель");
         for (int i = 0; i < hotels.length; i++) {
-           thisHotel = hotels[i];
-           System.out.print(i+1 + " - ");
-           System.out.println(hotels[i].getName());
+            System.out.print(i + 1 + " - ");
+            System.out.println(hotels[i].getName());
         }
         Scanner sc = new Scanner(System.in);
         Integer userChose = sc.nextInt();
-        for (int i = 1; i < hotels.length + 1; i++) {
-            if (i+1 == userChose) {
-                return thisHotel;
+        for (int i = 0; i < hotels.length; i++) {
+            if (i + 1 == userChose) {
+                System.out.println(hotels[i].getName());
+                return hotels[i];
             }
         }
         return null;
     }
-    public static Room choseRoom(Hotel[] hotel) {
+
+    public static Room choseRoom(Room[] rooms) {
         Room thisRoom = null;
-        for (int i = 0; i < hotel.length; i++) {
-            for (int j = 0; j < hotel[i].getRoomArray().length; j++) {
-                thisRoom = hotel[i].getRoomArray()[j];
+        for (int i = 0; i < rooms.length; i++) {
+            thisRoom = rooms[i];
+            System.out.print(i + 1 + " - ");
+            System.out.println(rooms[i].getNumberOfRooms() + " " + rooms[i].getCost() + " " + rooms[i].Free());
+        }
+        Scanner sc = new Scanner(System.in);
+        Integer userChose = sc.nextInt();
+        for (int i = 0; i < rooms.length; i++) {
+            if (i + 1 == userChose) {
+                return thisRoom;
             }
         }
-        return thisRoom;
+        return null;
     }
 
 
@@ -38,8 +45,9 @@ public class Methods {
             int finalSumm = 0;
             finalSumm = client.getBillAmmount() - room.getCost();
             client.setBillAmmountll(finalSumm);
-            room.setNotFree(true);
+            room.Free(true);
             System.out.println("Номер забронирован");
+
         }
     }
     //public static void choosTheCheapestRoom(Client client, Hotel[] hotels, Room[] rooms){
