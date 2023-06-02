@@ -17,10 +17,14 @@ public class Main {
 
         Hotel [] hotelsArray = new Hotel[]{hotel1, hotel2, hotel3};
 
-        //Methods.transaction(client1, hotel1room1);
+        //
         //Methods.allMoney(clients);
         //Methods.choseRoom(hotelsArray);
-        Methods.choseHotel(hotelsArray);
+        Hotel gettingHotel = Methods.choseHotel(hotelsArray);
+        Room gettingRoom = Methods.choseRoom(gettingHotel.getRoomArray());
+        Methods.transaction(client1, gettingRoom);
+        Methods.transaction(client1, gettingRoom);
+
 
 
     }

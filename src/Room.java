@@ -4,14 +4,16 @@ public class Room {
     private Integer numberOfRooms;
     private String gender;
     private Integer cost;
-    private boolean notFree;
+    private boolean Free;
 
-    public Room(Integer roomId, Integer numberOfRooms, String gender, Integer cost, boolean notFree) {
+
+
+    public Room(Integer roomId, Integer numberOfRooms, String gender, Integer cost, boolean Free) {
         this.roomId = roomId;
         this.numberOfRooms = numberOfRooms;
         this.gender = gender;
         this.cost = cost;
-        this.notFree = notFree;
+        this.Free = Free;
     }
 
     public Integer getRoomId() {
@@ -46,11 +48,11 @@ public class Room {
         this.cost = cost;
     }
 
-    public boolean isNotFree() {
-        return notFree;
+    public boolean Free() {
+        return Free;
     }
 
-    public void setNotFree(boolean notFree) {
-        this.notFree = notFree;
+    public void Free(boolean notFree) {
+        this.Free = Free;
     }
 }
