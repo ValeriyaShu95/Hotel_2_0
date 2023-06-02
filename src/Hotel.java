@@ -1,5 +1,5 @@
 public class Hotel {
-    Room [] roomArray = new Room[]{};
+    private Room [] roomArray = new Room[]{};
     private String name;
 
     public Hotel(String name, Room[] roomArray) {

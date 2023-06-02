@@ -18,7 +18,9 @@ public class Main {
         Hotel [] hotelsArray = new Hotel[]{hotel1, hotel2, hotel3};
 
         //Methods.transaction(client1, hotel1room1);
-        Methods.allMoney(clients);
+        //Methods.allMoney(clients);
+        //Methods.choseRoom(hotelsArray);
+        Methods.choseHotel(hotelsArray);
 
 
     }
