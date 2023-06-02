@@ -1,6 +1,34 @@
 import java.util.Scanner;
 
 public class Methods {
+    public static Hotel choseHotel (Hotel [] hotels){
+        Hotel thisHotel = null;
+        System.out.println("Выберете отель");
+        for (int i = 0; i < hotels.length; i++) {
+           thisHotel = hotels[i];
+           System.out.print(i+1 + " - ");
+           System.out.println(hotels[i].getName());
+        }
+        Scanner sc = new Scanner(System.in);
+        Integer userChose = sc.nextInt();
+        for (int i = 1; i < hotels.length + 1; i++) {
+            if (i+1 == userChose) {
+                return thisHotel;
+            }
+        }
+        return null;
+    }
+    public static Room choseRoom(Hotel[] hotel) {
+        Room thisRoom = null;
+        for (int i = 0; i < hotel.length; i++) {
+            for (int j = 0; j < hotel[i].getRoomArray().length; j++) {
+                thisRoom = hotel[i].getRoomArray()[j];
+            }
+        }
+        return thisRoom;
+    }
+
+
     public static void transaction(Client client, Room room) {
 //        Scanner sc = new Scanner(System.in);
 //        sc =
