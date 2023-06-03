@@ -5,7 +5,7 @@ public class Main {
         Client client2 = new Client("Lera", "female", "+71232442", "jfjf@gdjgn.ru", 10);
         Client [] clients = new Client[]{client1, client2};
 
-        Room hotel1room1 = new Room(1, 2,"male", 200, false);
+        Room hotel1room1 = new Room(1, 2,"male", 200, true);
         Room[] roomsHotel1 = new Room[]{hotel1room1};
         Hotel hotel1 = new Hotel("Vagas", roomsHotel1);
 
@@ -22,7 +22,6 @@ public class Main {
         //Methods.choseRoom(hotelsArray);
         Hotel gettingHotel = Methods.choseHotel(hotelsArray);
         Room gettingRoom = Methods.choseRoom(gettingHotel.getRoomArray());
-        Methods.transaction(client1, gettingRoom);
         Methods.transaction(client1, gettingRoom);
 
 

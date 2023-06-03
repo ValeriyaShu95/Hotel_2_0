@@ -19,17 +19,15 @@ public class Methods {
     }
 
     public static Room choseRoom(Room[] rooms) {
-        Room thisRoom = null;
         for (int i = 0; i < rooms.length; i++) {
-            thisRoom = rooms[i];
             System.out.print(i + 1 + " - ");
-            System.out.println(rooms[i].getNumberOfRooms() + " " + rooms[i].getCost() + " " + rooms[i].Free());
+            System.out.println(rooms[i].getNumberOfRooms() + " " + rooms[i].getCost() + " " + rooms[i].getFree());
         }
         Scanner sc = new Scanner(System.in);
         Integer userChose = sc.nextInt();
         for (int i = 0; i < rooms.length; i++) {
             if (i + 1 == userChose) {
-                return thisRoom;
+                return rooms[i];
             }
         }
         return null;
@@ -39,17 +37,20 @@ public class Methods {
     public static void transaction(Client client, Room room) {
 //        Scanner sc = new Scanner(System.in);
 //        sc =
-        if (client.getBillAmmount() < room.getCost()) {
+        if ((client.getBillAmmount() < room.getCost())) {
             System.out.println("На вашем счете не достаточно денег");
+        } else if ((room.getFree() == false)) {
+            System.out.println("Номер уже занят. Выберете другой");
         } else {
-            int finalSumm = 0;
-            finalSumm = client.getBillAmmount() - room.getCost();
-            client.setBillAmmountll(finalSumm);
-            room.Free(true);
-            System.out.println("Номер забронирован");
+        int finalSumm = 0;
+        finalSumm = client.getBillAmmount() - room.getCost();
+        client.setBillAmmountll(finalSumm);
+        room.setFree(false);
+        System.out.println("Номер забронирован");
 
-        }
     }
+
+}
     //public static void choosTheCheapestRoom(Client client, Hotel[] hotels, Room[] rooms){
     //    hotels[0].roomArray
 
